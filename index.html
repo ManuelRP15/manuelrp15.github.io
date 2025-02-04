@@ -87,12 +87,14 @@
           alt="Español"
           class="language-btn"
           id="espanol-btn"
+          onclick="setLanguage('es')"
         />
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/800px-Flag_of_the_United_Kingdom_%283-5%29.svg.png?20230715230526"
           alt="Inglés"
           class="language-btn"
           id="ingles-btn"
+          onclick="setLanguage('en')"
         />
       </div>
     </header>
@@ -102,24 +104,31 @@
       class="h-screen flex justify-center items-center text-center fade-in"
     >
       <div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 text-white">
+        <h1
+          class="text-4xl sm:text-5xl font-extrabold mb-6 text-white"
+          id="home-title"
+        >
           Hola, soy Manuel Roldán
         </h1>
-        <p class="text-lg sm:text-xl mb-8 max-w-3xl mx-auto">
+        <p
+          class="text-lg sm:text-xl mb-8 max-w-3xl mx-auto"
+          id="home-description"
+        >
           Desarrollador web en formación, con pasión por la programación y el
           diseño web.
         </p>
         <a
           href="#proyectos"
           class="bg-blue-600 py-3 px-8 rounded-lg hover:bg-blue-500 transition text-lg"
+          id="view-projects-btn"
           >Ver mis proyectos</a
         >
       </div>
     </section>
 
     <section id="sobre-mi" class="py-16 bg-gray-800 text-center fade-in">
-      <h2 class="section-title mb-6">Sobre mí</h2>
-      <p class="text-lg px-8 mb-6 max-w-3xl mx-auto">
+      <h2 class="section-title mb-6" id="about-title">Sobre mí</h2>
+      <p class="text-lg px-8 mb-6 max-w-3xl mx-auto" id="about-description">
         Soy un estudiante de desarrollo web en formación, con conocimientos en
         HTML, CSS, Tailwind, Bootstrap, JavaScript, PHP, entre otros.
       </p>
@@ -127,20 +136,23 @@
         href="https://github.com/manuelrp15/recursos/Curriculum_ManuelRoldan.pdf"
         target="_blank"
         class="bg-blue-600 py-3 px-8 rounded-lg hover:bg-blue-500 transition text-lg"
+        id="cv-btn"
         >Ver mi currículum</a
       >
     </section>
 
     <section id="proyectos" class="py-16 bg-gray-900 fade-in">
-      <h2 class="section-title text-center mb-8">Mis Proyectos</h2>
+      <h2 class="section-title text-center mb-8" id="projects-title">
+        Mis Proyectos
+      </h2>
       <div class="flex flex-wrap justify-center gap-8">
         <div
           class="max-w-xs bg-gray-800 p-6 rounded-lg text-center transition card"
         >
-          <h3 class="text-2xl font-semibold mb-4">
+          <h3 class="text-2xl font-semibold mb-4" id="project-1-title">
             Web de Noticias de Videojuegos
           </h3>
-          <p class="text-gray-400 mb-4">
+          <p class="text-gray-400 mb-4" id="project-1-description">
             Sitio web de noticias sobre videojuegos, diseñado con React y
             Tailwind.
           </p>
@@ -154,8 +166,10 @@
         <div
           class="max-w-xs bg-gray-800 p-6 rounded-lg text-center transition card"
         >
-          <h3 class="text-2xl font-semibold mb-4">Proyecto PHP</h3>
-          <p class="text-gray-400 mb-4">
+          <h3 class="text-2xl font-semibold mb-4" id="project-2-title">
+            Proyecto PHP
+          </h3>
+          <p class="text-gray-400 mb-4" id="project-2-description">
             Sistema de gestión de usuarios con PHP y MySQL.
           </p>
           <a
@@ -168,15 +182,15 @@
     </section>
 
     <section id="contacto" class="py-16 bg-gray-800 text-center fade-in">
-      <h2 class="section-title mb-6">Contacto</h2>
+      <h2 class="section-title mb-6" id="contact-title">Contacto</h2>
       <div class="max-w-md mx-auto bg-gray-700 p-8 rounded-lg shadow-lg">
-        <p class="text-xl mb-4">manuelrp15@outlook.es</p>
+        <p class="text-xl mb-4" id="contact-email">manuelrp15@outlook.es</p>
         <a
           href="mailto:manuelrp15@outlook.es"
           class="bg-blue-600 py-3 px-8 rounded-lg hover:bg-blue-500 transition text-lg"
           >Enviar Correo</a
         >
-        <p class="mt-6">Teléfono: +34 611437033</p>
+        <p class="mt-6" id="contact-phone">Teléfono: +34 611437033</p>
       </div>
     </section>
 
@@ -213,7 +227,54 @@
       const setLanguage = (language) => {
         if (language === "en") {
           document.documentElement.lang = "en";
-          document.getElementById("home").innerHTML = `...`;
+          document.getElementById("home-title").innerHTML =
+            "Hello, I'm Manuel Roldán";
+          document.getElementById("home-description").innerHTML =
+            "Web developer in training, passionate about programming and web design.";
+          document.getElementById("view-projects-btn").innerHTML =
+            "See my projects";
+          document.getElementById("about-title").innerHTML = "About Me";
+          document.getElementById("about-description").innerHTML =
+            "I'm a web development student in training, with knowledge of HTML, CSS, Tailwind, Bootstrap, JavaScript, PHP, among others.";
+          document.getElementById("cv-btn").innerHTML = "View my resume";
+          document.getElementById("projects-title").innerHTML = "My Projects";
+          document.getElementById("project-1-title").innerHTML =
+            "Video Game News Website";
+          document.getElementById("project-1-description").innerHTML =
+            "Video game news website, designed with React and Tailwind.";
+          document.getElementById("project-2-title").innerHTML = "PHP Project";
+          document.getElementById("project-2-description").innerHTML =
+            "User management system with PHP and MySQL.";
+          document.getElementById("contact-title").innerHTML = "Contact";
+          document.getElementById("contact-email").innerHTML =
+            "manuelrp15@outlook.es";
+          document.getElementById("contact-phone").innerHTML =
+            "Phone: +34 611437033";
+        } else {
+          document.documentElement.lang = "es";
+          document.getElementById("home-title").innerHTML =
+            "Hola, soy Manuel Roldán";
+          document.getElementById("home-description").innerHTML =
+            "Desarrollador web en formación, con pasión por la programación y el diseño web.";
+          document.getElementById("view-projects-btn").innerHTML =
+            "Ver mis proyectos";
+          document.getElementById("about-title").innerHTML = "Sobre mí";
+          document.getElementById("about-description").innerHTML =
+            "Soy un estudiante de desarrollo web en formación, con conocimientos en HTML, CSS, Tailwind, Bootstrap, JavaScript, PHP, entre otros.";
+          document.getElementById("cv-btn").innerHTML = "Ver mi currículum";
+          document.getElementById("projects-title").innerHTML = "Mis Proyectos";
+          document.getElementById("project-1-title").innerHTML =
+            "Web de Noticias de Videojuegos";
+          document.getElementById("project-1-description").innerHTML =
+            "Sitio web de noticias sobre videojuegos, diseñado con React y Tailwind.";
+          document.getElementById("project-2-title").innerHTML = "Proyecto PHP";
+          document.getElementById("project-2-description").innerHTML =
+            "Sistema de gestión de usuarios con PHP y MySQL.";
+          document.getElementById("contact-title").innerHTML = "Contacto";
+          document.getElementById("contact-email").innerHTML =
+            "manuelrp15@outlook.es";
+          document.getElementById("contact-phone").innerHTML =
+            "Teléfono: +34 611437033";
         }
       };
     </script>
