@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Manuel Roldán</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .enlace-navegacion {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s;
+      }
+
+      .enlace-navegacion:hover {
+        color: #3b82f6;
+        text-decoration: underline;
+      }
+
+      .boton-idioma {
+        width: 30px;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .boton-idioma:hover {
+        transform: scale(1.1);
+      }
+
+      .titulo-seccion {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .texto-seccion {
+        font-size: 1.25rem;
+        color: #e5e7eb;
+      }
+
+      .icono-bandera {
+        width: 32px;
+        height: 24px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .icono-bandera:hover {
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 640px) {
+        .titulo-seccion {
+          font-size: 2.5rem;
+        }
+        .texto-seccion {
+          font-size: 1.125rem;
+        }
+        .boton-idioma {
+          width: 24px;
+        }
+      }
+
+      .ocultar-header {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+      }
+
+      body {
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <header
+      class="bg-gray-800 p-4 sm:p-6 flex justify-between items-center fixed w-full z-50 transition-all"
+      id="barra-navegacion"
+      style="box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2)"
+    >
+      <div class="flex space-x-4 sm:space-x-8">
+        <a
+          href="https://github.com/manuelrp15"
+          target="_blank"
+          class="text-sm sm:text-lg enlace-navegacion"
+          >GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/manuel-roldán-pérez-5aa70719a"
+          target="_blank"
+          class="text-sm sm:text-lg enlace-navegacion"
+          >LinkedIn</a
+        >
+      </div>
+      <div class="flex space-x-4 sm:space-x-6 items-center">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/750px-Flag_of_Spain.svg.png"
+          alt="Español"
+          class="icono-bandera"
+          onclick="cambiarIdioma('es')"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/800px-Flag_of_the_United_Kingdom_%283-5%29.svg.png"
+          alt="Inglés"
+          class="icono-bandera"
+          onclick="cambiarIdioma('en')"
+        />
+      </div>
+    </header>
+
+    <section
+      id="inicio"
+      class="h-screen flex justify-center items-center text-center fade-in"
+    >
+      <div>
+        <h1
+          class="text-5xl sm:text-6xl font-extrabold mb-6 text-white"
+          id="titulo-inicio"
+        >
+          Hola, soy Manuel Roldán
+        </h1>
+        <p
+          class="text-xl sm:text-2xl mb-8 max-w-3xl mx-auto"
+          id="descripcion-inicio"
+        >
+          Desarrollador web en formación, con pasión por la programación y el
+          diseño web.
+        </p>
+        <a
+          href="#proyectos"
+          class="bg-blue-600 py-3 px-8 rounded-lg hover:bg-blue-500 transition text-lg"
+          id="boton-ver-proyectos"
+          >Ver mis proyectos</a
+        >
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="py-20 bg-gray-800 text-center fade-in">
+      <h2 class="titulo-seccion mb-6" id="titulo-sobre-mi">Sobre mí</h2>
+      <p class="texto-seccion mb-6 max-w-4xl mx-auto" id="descripcion-sobre-mi">
+        Soy un estudiante de desarrollo web, con conocimientos en HTML, CSS,
+        Bootstrap, JavaScript, Java, PHP, Oracle Database, phpMyAdmin, entre
+        otros.
+      </p>
+    </section>
+
+    <section id="proyectos" class="py-20 bg-gray-900 fade-in">
+      <h2 class="titulo-seccion text-center mb-8" id="titulo-proyectos">
+        Mis Proyectos
+      </h2>
+      <div class="flex flex-wrap justify-center gap-16">
+        <div
+          class="max-w-xs bg-gray-800 p-6 rounded-lg text-center transition card"
+        >
+          <h3 class="text-2xl font-semibold mb-4" id="proyecto1-titulo">
+            Web de gestión de eventos con roles
+          </h3>
+          <p class="text-gray-400 mb-4" id="proyecto1-descripcion">
+            Proyecto de web funcional con diferentes roles y acciones, hecho con
+            PHP y phpMyAdmin.
+          </p>
+          <a
+            href="https://proyectointegralmroldan15.fwh.is/"
+            target="_blank"
+            class="bg-blue-600 py-3 px-8 rounded-lg hover:bg-blue-500 transition text-lg"
+            id="proyecto1-boton"
+            >Ver Proyecto</a
+          >
+        </div>
+
+        <div
+          class="max-w-xs bg-gray-800 p-6 rounded-lg text-center transition card"
+        >
+          <h3 class="text-2xl font-semibold mb-4" id="proyecto2-titulo">
+            Web de Noticias de Videojuegos
+          </h3>
+          <p class="text-gray-400 mb-4" id="proyecto2-descripcion">
+            Sitio web de noticias sobre videojuegos, diseñado con React y
+            Tailwind CSS.
+          </p>
+          <a
+            href="https://manuelrp15.github.io/Proyectos/NoticiasVideojuegos/"
+            target="_blank"
+            class="bg-blue-600 py-3 px-8 rounded-lg hover:bg-blue-500 transition text-lg"
+            id="proyecto2-boton"
+            >Ver Proyecto</a
+          >
+        </div>
+
+        <div
+          class="max-w-xs bg-gray-800 p-6 rounded-lg text-center transition card"
+        >
+          <h3 class="text-2xl font-semibold mb-4" id="proyecto3-titulo">
+            VisionEnhancer
+          </h3>
+          <p class="text-gray-400 mb-4" id="proyecto3-descripcion">
+            Aplicación web sencilla pensada para personas ciegas, que mejora el
+            contraste y brillo de imágenes.
+          </p>
+          <a
+            href="https://manuelrp15.github.io/Proyectos/VisionEnhancer/"
+            class="bg-blue-600 py-3 px-8 rounded-lg hover:bg-blue-500 transition text-lg"
+            id="proyecto3-boton"
+            >Ver Proyecto</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-gray-800 text-center fade-in">
+      <h2 class="titulo-seccion mb-6" id="titulo-contacto">Contacto</h2>
+      <div class="max-w-md mx-auto bg-gray-700 p-8 rounded-lg shadow-lg">
+        <p class="text-xl mb-4" id="correo-contacto">manuelrp15@outlook.es</p>
+        <a
+          href="mailto:manuelrp15@outlook.es"
+          class="bg-blue-600 py-3 px-8 rounded-lg hover:bg-blue-500 transition text-lg"
+          id="boton-contacto"
+          >Enviar correo</a
+        >
+      </div>
+    </section>
+
+    <script>
+      let ultimoScroll = 0;
+      const barra = document.getElementById("barra-navegacion");
+
+      window.addEventListener("scroll", function () {
+        let scrollActual =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollActual > ultimoScroll) {
+          barra.classList.add("ocultar-header");
+        } else {
+          barra.classList.remove("ocultar-header");
+        }
+        ultimoScroll = scrollActual;
+      });
+
+      const secciones = document.querySelectorAll(".fade-in");
+      const observador = new IntersectionObserver(
+        (entradas) => {
+          entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+              entrada.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      secciones.forEach((seccion) => {
+        observador.observe(seccion);
+      });
+
+      const cambiarIdioma = (idioma) => {
+        if (idioma === "en") {
+          document.documentElement.lang = "en";
+          document.getElementById("titulo-inicio").innerHTML =
+            "Hello, I'm Manuel Roldán";
+          document.getElementById("descripcion-inicio").innerHTML =
+            "Web developer in training, passionate about programming and web design.";
+          document.getElementById("boton-ver-proyectos").innerHTML =
+            "See my projects";
+          document.getElementById("titulo-sobre-mi").innerHTML = "About Me";
+          document.getElementById("descripcion-sobre-mi").innerHTML =
+            "I'm a web development student, with knowledge in HTML, CSS, Bootstrap, JavaScript, Java, PHP, Oracle Database, phpMyAdmin, and more.";
+          document.getElementById("titulo-proyectos").innerHTML = "My Projects";
+          document.getElementById("proyecto1-titulo").innerHTML =
+            "Event Management Website with Roles";
+          document.getElementById("proyecto1-descripcion").innerHTML =
+            "Functional web project with different roles and actions, built with PHP and phpMyAdmin.";
+          document.getElementById("proyecto1-boton").innerHTML = "View Project";
+          document.getElementById("proyecto2-titulo").innerHTML =
+            "Video Game News Website";
+          document.getElementById("proyecto2-descripcion").innerHTML =
+            "News site about video games, designed with React and Tailwind CSS.";
+          document.getElementById("proyecto2-boton").innerHTML = "View Project";
+          document.getElementById("proyecto3-titulo").innerHTML =
+            "VisionEnhancer";
+          document.getElementById("proyecto3-descripcion").innerHTML =
+            "Simple web application designed for visually impaired people, enhancing image contrast and brightness.";
+          document.getElementById("proyecto3-boton").innerHTML = "View Project";
+          document.getElementById("titulo-contacto").innerHTML = "Contact";
+          document.getElementById("boton-contacto").innerHTML = "Send Email";
+        } else {
+          location.reload();
+        }
+      };
+    </script>
+  </body>
+</html>
